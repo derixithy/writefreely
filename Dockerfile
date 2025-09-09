@@ -1,4 +1,4 @@
-ARG GOLANG_VERSION=1.22
+ARG GOLANG_VERSION=1.23
 
 # Build image
 FROM golang:${GOLANG_VERSION}-alpine as build
@@ -39,7 +39,7 @@ RUN mkdir /stage && \
 FROM alpine:3.19
 
 ARG WRITEFREELY_UID=1024
-ARG WRITEFREELY_GID=100
+ARG WRITEFREELY_GID=1000
 
 RUN apk -U upgrade && apk add --no-cache openssl ca-certificates
 
